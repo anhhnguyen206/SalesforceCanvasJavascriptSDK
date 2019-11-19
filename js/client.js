@@ -576,8 +576,8 @@
                      */
                     refreshSignedRequest : function(clientscb) { //, name) {
                         // Leave in for manual testing (possibly automate this not sure how)
-                        // var id = (name) ? name : window.name.substring("canvas-frame-".length),
-                        var id = window.name.substring("canvas-frame-".length),
+                        // var id = (name) ? name : window.name.substring("canvas-inner-".length),
+                        var id = window.name.substring("canvas-inner-".length),
                             client = {oauthToken : "null", instanceId : id, targetOrigin : "*"};
                         postit(clientscb, {type : "refresh", accessToken : client.oauthToken, config : {client : client}});
                     },
@@ -595,7 +595,7 @@
                      *  Sfdc.canvas.client.repost({refresh : true});
                      */
                     repost : function(refresh) {
-                        var id = window.name.substring("canvas-frame-".length),
+                        var id = window.name.substring("canvas-inner-".length),
                             client = {oauthToken : "null", instanceId : id, targetOrigin : "*"},
                             r= refresh || false;
                         postit(null, {type : "repost", accessToken : client.oauthToken, config : {client : client}, refresh : r});
